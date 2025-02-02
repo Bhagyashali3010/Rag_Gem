@@ -1,0 +1,4 @@
+gem_env
+faiss_index
+.vscode
+.env
