@@ -10,14 +10,10 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
+
 load_dotenv()
 os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
-
-
-
-
 
 def get_pdf_text(pdf_docs):
     text=""
@@ -52,7 +48,7 @@ def get_conversational_chain():
     Answer:
     """
 
-    model = ChatGoogleGenerativeAI(model="gemini-pro",
+    model = ChatGoogleGenerativeAI(model="gemini-1.5-pro",
                              temperature=0.3)
 
     prompt = PromptTemplate(template = prompt_template, input_variables = ["context", "question"])
